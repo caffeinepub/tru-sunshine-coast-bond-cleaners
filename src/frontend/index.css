@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque[opsz,wdth,wght].woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans[wght].woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+
+    /* Brand: Deep ocean blue */
+    --background: 0.98 0.005 240;
+    --foreground: 0.18 0.04 240;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.04 240;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.04 240;
+
+    /* Primary: Deep navy blue */
+    --primary: 0.28 0.09 240;
+    --primary-foreground: 0.98 0.005 240;
+
+    /* Secondary: Warm sunshine yellow */
+    --secondary: 0.88 0.14 88;
+    --secondary-foreground: 0.18 0.04 240;
+
+    /* Muted */
+    --muted: 0.94 0.01 240;
+    --muted-foreground: 0.52 0.03 240;
+
+    /* Accent: Sunshine yellow */
+    --accent: 0.85 0.16 88;
+    --accent-foreground: 0.18 0.04 240;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --border: 0.88 0.02 240;
+    --input: 0.92 0.01 240;
+    --ring: 0.28 0.09 240;
+
+    /* Chart colors */
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+
+    /* Sidebar */
+    --sidebar: 0.28 0.09 240;
+    --sidebar-foreground: 0.98 0.005 240;
+    --sidebar-primary: 0.85 0.16 88;
+    --sidebar-primary-foreground: 0.18 0.04 240;
+    --sidebar-accent: 0.35 0.1 240;
+    --sidebar-accent-foreground: 0.98 0.005 240;
+    --sidebar-border: 0.35 0.08 240;
+    --sidebar-ring: 0.85 0.16 88;
+
+    /* Brand custom tokens */
+    --brand-navy: 0.28 0.09 240;
+    --brand-navy-dark: 0.2 0.08 240;
+    --brand-navy-light: 0.38 0.09 240;
+    --brand-yellow: 0.85 0.16 88;
+    --brand-yellow-light: 0.92 0.14 88;
+    --brand-white: 1 0 0;
+    --brand-light-bg: 0.97 0.008 240;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  .text-brand-navy {
+    color: oklch(var(--brand-navy));
+  }
+
+  .text-brand-yellow {
+    color: oklch(var(--brand-yellow));
+  }
+
+  .bg-brand-navy {
+    background-color: oklch(var(--brand-navy));
+  }
+
+  .bg-brand-navy-dark {
+    background-color: oklch(var(--brand-navy-dark));
+  }
+
+  .bg-brand-yellow {
+    background-color: oklch(var(--brand-yellow));
+  }
+
+  .bg-brand-light {
+    background-color: oklch(var(--brand-light-bg));
+  }
+
+  .border-brand-yellow {
+    border-color: oklch(var(--brand-yellow));
+  }
+
+  .hero-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--brand-navy-dark) / 0.92) 0%,
+      oklch(var(--brand-navy) / 0.75) 50%,
+      oklch(0.32 0.09 220 / 0.65) 100%
+    );
+  }
+
+  .section-gradient {
+    background: linear-gradient(
+      180deg,
+      oklch(var(--brand-navy)) 0%,
+      oklch(var(--brand-navy-dark)) 100%
+    );
+  }
+
+  .yellow-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(var(--brand-yellow)) 0%,
+      oklch(0.82 0.17 95) 100%
+    );
+  }
+}
